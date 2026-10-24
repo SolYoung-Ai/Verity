@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Outlet, NavLink, Link } from "react-router-dom";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 import BrandLogo from "./BrandLogo";
 import { Image } from "@/components/ui/image";
 import { SITE } from "@/config/site";
@@ -11,6 +12,21 @@ const NAV = [
   { path: "/tests", label: "全部测试", end: false },
   { path: "/about", label: "关于", end: false },
 ];
+
+function ThemeToggle() {
+  const { resolvedTheme, setTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
+  return (
+    <button
+      type="button"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      aria-label={isDark ? "切换到浅色模式" : "切换到深色模式"}
+      className="rounded-md p-2 text-muted-foreground transition-colors hover:text-foreground"
+    >
+      {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+    </button>
+  );
+}
 
 export const Layout = () => {
   const [open, setOpen] = useState(false);
@@ -38,14 +54,17 @@ export const Layout = () => {
               </NavLink>
             ))}
           </nav>
-          <button
-            type="button"
-            className="rounded-md p-2 text-muted-foreground hover:text-foreground md:hidden"
-            onClick={() => setOpen((o) => !o)}
-            aria-label={open ? "关闭菜单" : "打开菜单"}
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          <div className="flex items-center gap-1">
+            <ThemeToggle />
+            <button
+              type="button"
+              className="rounded-md p-2 text-muted-foreground hover:text-foreground md:hidden"
+              onClick={() => setOpen((o) => !o)}
+              aria-label={open ? "关闭菜单" : "打开菜单"}
+            >
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
         {open && (
           <nav className="space-y-1 border-t px-4 py-2 md:hidden">

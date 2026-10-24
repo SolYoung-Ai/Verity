@@ -48,6 +48,7 @@ export const COLOR_TEST: ITestDef = {
   time: '4-6 分钟',
   trust: '娱乐测试 · 无心理学效度',
   icon: 'Palette',
+  module: 'COLOR',
   kind: 'topType',
   questions: [
     { q: '遇到问题我习惯立刻行动、直来直去', opts: p('red') },
@@ -114,6 +115,7 @@ export const ANIMAL_TEST: ITestDef = {
   time: '4-6 分钟',
   trust: '娱乐测试 · 无心理学效度',
   icon: 'PawPrint',
+  module: 'ANIMAL',
   kind: 'topType',
   questions: [
     { q: '我目标感强，做事讲求结果和效率', opts: p('tiger') },

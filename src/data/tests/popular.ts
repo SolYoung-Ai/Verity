@@ -25,6 +25,7 @@ export const MBTI_TEST: ITestDef = {
   time: '7-10 分钟',
   trust: '流行测评 · 学术争议较大，仅供参考',
   icon: 'Brain',
+  module: 'MBTI',
   kind: 'mbti',
   questions: [
     { q: '忙碌的社交之后，我需要独处才能恢复精力', opts: p('I') },
@@ -138,6 +139,7 @@ export const ENNEAGRAM_TEST: ITestDef = {
   time: '8-11 分钟',
   trust: '流行测评 · 学术争议较大，仅供参考',
   icon: 'Layers',
+  module: 'ENNEAGRAM',
   kind: 'topType',
   questions: [
     { q: '我追求把事情做到完美，常挑剔自己或别人不够好', opts: p('e1') },
@@ -210,6 +212,7 @@ export const DISC_TEST: ITestDef = {
   time: '6-9 分钟',
   trust: '流行测评 · 学术争议较大，仅供参考',
   icon: 'Zap',
+  module: 'DISC',
   kind: 'topType',
   questions: [
     { q: '遇到问题我倾向快速拍板、推动落地', opts: p('D') },
@@ -276,6 +279,7 @@ export const KEIRSEY_TEST: ITestDef = {
   time: '7-10 分钟',
   trust: '流行测评 · 学术争议较大，仅供参考',
   icon: 'Flame',
+  module: 'KEIRSEY',
   kind: 'topType',
   questions: [
     { q: '我享受钻研原理、解决复杂问题', opts: p('NT') },
@@ -393,6 +397,7 @@ export const GALLUP_TEST: ITestDef = {
   time: '10-14 分钟',
   trust: '流行测评 · 学术争议较大，仅供参考',
   icon: 'TrendingUp',
+  module: 'GALLUP',
   kind: 'topType',
   questions: [
     { q: '我喜欢每天都有具体成果可看', opts: p('achiever') },

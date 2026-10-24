@@ -48,6 +48,7 @@ export const FPA_TEST: ITestDef = {
   time: '6-9 分钟',
   trust: '流行测评 · 学术争议较大，仅供参考',
   icon: 'Sparkles',
+  module: 'FPA',
   kind: 'topType',
   questions: [
     { q: '我开朗外向，喜欢在人群中被关注', opts: p('red') },
@@ -118,6 +119,7 @@ export const PDP_TEST: ITestDef = {
   time: '6-9 分钟',
   trust: '流行测评 · 学术争议较大，仅供参考',
   icon: 'Crown',
+  module: 'PDP',
   kind: 'topType',
   questions: [
     { q: '我习惯快速拍板、推动事情落地', opts: p('tiger') },
@@ -213,6 +215,7 @@ export const BELBIN_TEST: ITestDef = {
   time: '8-11 分钟',
   trust: '流行测评 · 简化改编，仅供参考',
   icon: 'Users',
+  module: 'BELBIN',
   kind: 'topType',
   questions: [
     { q: '团队停滞时，我习惯站出来推动大家往前走', opts: p('shaper') },
@@ -290,6 +293,7 @@ export const LOVE_LANGUAGE_TEST: ITestDef = {
   time: '6-9 分钟',
   trust: '流行测评 · 仅供参考',
   icon: 'Heart',
+  module: 'LOVE LANGUAGE',
   kind: 'topType',
   questions: [
     { q: '我喜欢对方真诚地夸奖我、肯定我', opts: p('words') },
@@ -348,6 +352,7 @@ export const PROCRAST_TEST: ITestDef = {
   time: '4-6 分钟',
   trust: '流行测评 · 仅供参考',
   icon: 'Clock',
+  module: 'PROCRASTINATION',
   kind: 'dimension',
   questions: [
     { q: '任务没到最后一刻，我通常不太会开始', opts: p('procr') },
@@ -401,6 +406,7 @@ export const AQ_TEST: ITestDef = {
   time: '4-6 分钟',
   trust: '流行测评 · 仅供参考',
   icon: 'Mountain',
+  module: 'AQ',
   kind: 'dimension',
   questions: [
     { q: '遇到挫折，我能很快调整状态重新出发', opts: p('aq') },
@@ -454,6 +460,7 @@ export const LOT_TEST: ITestDef = {
   time: '4-6 分钟',
   trust: '学术量表 · 简化改编，仅供参考',
   icon: 'Sun',
+  module: 'LOT',
   kind: 'dimension',
   questions: [
     { q: '不确定的时候，我倾向相信事情会朝好的方向发展', opts: p('opt') },

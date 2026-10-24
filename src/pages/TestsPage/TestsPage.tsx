@@ -4,11 +4,12 @@ import { ALL_TESTS } from '@/data/registry';
 import type { TestCategory } from '@/data/types';
 import { cn } from '@/lib/utils';
 
-const FILTERS: { key: TestCategory | 'all'; label: string }[] = [
-  { key: 'all', label: '全部' },
-  { key: 'academic', label: '学术量表' },
-  { key: 'popular', label: '流行测评' },
-  { key: 'fun', label: '娱乐测试' },
+const FILTERS: { key: TestCategory | 'all'; label: string; en: string }[] = [
+  { key: 'all', label: '全部', en: 'ALL' },
+  { key: 'academic', label: '学术量表', en: 'ASSESSMENT' },
+  { key: 'popular', label: '流行测评', en: 'PERSONALITY' },
+  { key: 'fun', label: '娱乐测试', en: 'EXPLORATION' },
+  { key: 'finance', label: '财务规划', en: 'PLANNER' },
 ];
 
 export default function TestsPage() {
@@ -20,25 +21,39 @@ export default function TestsPage() {
     ? base.filter(
         (t) =>
           t.name.toLowerCase().includes(kwTrim) ||
-          t.desc.toLowerCase().includes(kwTrim),
+          t.desc.toLowerCase().includes(kwTrim) ||
+          (t.module ?? '').toLowerCase().includes(kwTrim),
       )
     : base;
+
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8">
-      <h1 className="text-2xl font-bold">全部测试</h1>
-      <p className="mt-1 text-sm text-muted-foreground">共 {ALL_TESTS.length} 套人格测试，按可信度分级</p>
-      <div className="mt-5 flex flex-wrap items-center gap-3">
-        <div className="flex flex-wrap gap-2">
+    <div className="mx-auto max-w-6xl px-4 py-12">
+      {/* Header */}
+      <div className="border-b border-border/60 pb-8">
+        <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+          Catalog
+        </div>
+        <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight text-foreground">
+          全部测试
+        </h1>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          共 {ALL_TESTS.length} 套人格与行为测评，按可信度分级。学术量表具备实证基础，流行测评仅供自我参考，娱乐测试请勿当真。
+        </p>
+      </div>
+
+      {/* Filters + Search */}
+      <div className="mt-6 flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap gap-1.5">
           {FILTERS.map((x) => (
             <button
               key={x.key}
               type="button"
               onClick={() => setF(x.key)}
               className={cn(
-                'rounded-full border px-4 py-1.5 text-sm transition-colors',
+                'rounded-full border px-3.5 py-1.5 text-xs transition-colors',
                 f === x.key
-                  ? 'border-primary bg-primary text-primary-foreground'
-                  : 'border-border bg-card text-muted-foreground hover:text-foreground',
+                  ? 'border-foreground bg-foreground text-background'
+                  : 'border-border/70 bg-card text-muted-foreground hover:border-border hover:text-foreground',
               )}
             >
               {x.label}
@@ -50,21 +65,27 @@ export default function TestsPage() {
           value={kw}
           onChange={(e) => setKw(e.target.value)}
           placeholder="搜索测试，如 MBTI、大五、九型…"
-          className="ml-auto h-9 w-full max-w-xs rounded-lg border border-border bg-card px-3 text-sm outline-none transition focus:border-primary focus:ring-1 focus:ring-primary/30"
+          className="ml-auto h-9 w-full max-w-xs rounded-full border border-border/70 bg-card px-4 text-sm outline-none transition focus:border-foreground"
         />
       </div>
+
       {kwTrim && (
-        <p className="mt-3 text-xs text-muted-foreground">
+        <p className="mt-4 text-xs text-muted-foreground">
           搜索「{kwTrim}」共找到 {list.length} 套测试
         </p>
       )}
-      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+      {/* Grid */}
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {list.map((t) => (
           <TestCard key={t.id} test={t} />
         ))}
       </div>
+
       {list.length === 0 && (
-        <p className="mt-10 text-center text-sm text-muted-foreground">没有找到匹配的测试，换个关键词试试。</p>
+        <p className="mt-16 text-center text-sm text-muted-foreground">
+          没有找到匹配的测试，换个关键词试试。
+        </p>
       )}
     </div>
   );

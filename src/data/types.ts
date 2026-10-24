@@ -2,7 +2,7 @@
 // EXPORTS: TestCategory, IOption, IQuestion, TestKind, DimensionMeta, TypeMeta,
 //          IDimensionPoint, ITypePoint, IMBTIDetail, IAttachmentDetail, TestResult, ITestDef
 
-export type TestCategory = 'academic' | 'popular' | 'fun';
+export type TestCategory = 'academic' | 'popular' | 'fun' | 'finance';
 
 export interface IOption {
   text: string;
@@ -111,6 +111,10 @@ export interface ITestDef {
   trust: string;
   icon: string;
   kind: TestKind;
+  /** 英文模块短标识（全大写，如 BIG FIVE / MBTI / ATTACHMENT），用于卡片 Header 展示 */
+  module?: string;
+  /** 是否为新增模块，卡片右上角展示 NEW 标签 */
+  isNew?: boolean;
   questions: IQuestion[];
   dimensionMeta?: DimensionMeta[];
   typesMeta?: Record<string, TypeMeta>;

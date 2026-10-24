@@ -60,6 +60,7 @@ export const RIASEC_TEST: ITestDef = {
   time: '8-12 分钟',
   trust: '学术量表 · 具备实证基础（简化版）',
   icon: 'Briefcase',
+  module: 'RIASEC',
   kind: 'topType',
   questions: [
     { q: '我喜欢亲手制作、修理或组装东西', opts: p('R') },
@@ -132,6 +133,7 @@ export const TEMPERAMENT_TEST: ITestDef = {
   time: '7-10 分钟',
   trust: '经典理论 · 偏经验学说，仅供参考',
   icon: 'Droplets',
+  module: 'TEMPERAMENT',
   kind: 'topType',
   questions: [
     { q: '我通常精力充沛，喜欢活跃热闹的环境', opts: p('sanguine') },
@@ -192,6 +194,7 @@ export const SES_TEST: ITestDef = {
   time: '4-6 分钟',
   trust: '学术量表 · 具备实证基础（改编版）',
   icon: 'ShieldCheck',
+  module: 'SES',
   kind: 'dimension',
   questions: [
     { q: '总的来说，我对自己是满意的', opts: p('esteem') },
@@ -245,6 +248,7 @@ export const SAS_TEST: ITestDef = {
   time: '5-8 分钟',
   trust: '学术量表 · 简化改编，仅供自评参考',
   icon: 'Wind',
+  module: 'SAS',
   kind: 'dimension',
   questions: [
     { q: '最近我常常感到紧张和难以放松', opts: p('anxiety') },
@@ -300,6 +304,7 @@ export const SDS_TEST: ITestDef = {
   time: '5-8 分钟',
   trust: '学术量表 · 简化改编，仅供自评参考',
   icon: 'CloudRain',
+  module: 'SDS',
   kind: 'dimension',
   questions: [
     { q: '最近我觉得做什么都提不起劲', opts: p('depression') },

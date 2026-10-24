@@ -86,6 +86,69 @@
   --shadow-2xl: 0px 2px 12px 0px hsl(0 0% 0% / 0.05);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
+
+  /* VERITY logo tile (theme-adaptive) */
+  --verity-logo-tile-bg: #F3F2ED;
+  --verity-logo-tile-border: rgba(20, 20, 20, 0.08);
+  --verity-logo-text: #171717;
+  --verity-accent: #C2410C;
+}
+
+.dark {
+  --background: hsl(30 8% 10%);
+  --foreground: hsl(40 20% 94%);
+  --card: hsl(30 7% 13%);
+  --card-foreground: hsl(40 20% 94%);
+  --card-border: hsl(30 6% 22%);
+  --popover: hsl(30 7% 13%);
+  --popover-foreground: hsl(40 20% 94%);
+  --primary: hsl(30 30% 78%);
+  --primary-foreground: hsl(30 8% 12%);
+  --secondary: hsl(30 6% 18%);
+  --secondary-foreground: hsl(40 20% 90%);
+  --muted: hsl(30 6% 18%);
+  --muted-foreground: hsl(35 10% 65%);
+  --accent: hsl(24 90% 60%);
+  --accent-foreground: hsl(30 30% 12%);
+  --info: hsl(30 30% 78%);
+  --info-foreground: hsl(30 8% 12%);
+  --destructive: hsl(2 70% 58%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --success: hsl(130 40% 50%);
+  --success-foreground: hsl(130 40% 10%);
+  --warning: hsl(26 80% 55%);
+  --warning-foreground: hsl(26 80% 10%);
+  --border: hsl(30 6% 22%);
+  --input: hsl(30 6% 22%);
+  --ring: hsl(24 80% 60%);
+  --sidebar: hsl(30 7% 13%);
+  --sidebar-foreground: hsl(40 20% 92%);
+  --sidebar-primary: hsl(24 80% 60%);
+  --sidebar-primary-foreground: hsl(30 8% 10%);
+  --sidebar-accent: hsl(30 6% 18%);
+  --sidebar-accent-foreground: hsl(24 80% 65%);
+  --sidebar-border: hsl(30 6% 22%);
+  --sidebar-ring: hsl(24 80% 60%);
+
+  --button-outline: rgba(255,255,255, .14);
+  --badge-outline: rgba(255,255,255, .08);
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .08);
+
+  --shadow-2xs: 0px 2px 12px 0px hsl(0 0% 0% / 0.4);
+  --shadow-xs: 0px 2px 12px 0px hsl(0 0% 0% / 0.4);
+  --shadow-sm: 0px 2px 12px 0px hsl(0 0% 0% / 0.4), 0px 1px 2px -1px hsl(0 0% 0% / 0.4);
+  --shadow: 0px 2px 12px 0px hsl(0 0% 0% / 0.4), 0px 1px 2px -1px hsl(0 0% 0% / 0.4);
+  --shadow-md: 0px 2px 12px 0px hsl(0 0% 0% / 0.4), 0px 4px 6px -1px hsl(0 0% 0% / 0.4);
+  --shadow-lg: 0px 2px 12px 0px hsl(0 0% 0% / 0.4), 0px 8px 10px -1px hsl(0 0% 0% / 0.4);
+  --shadow-xl: 0px 2px 12px 0px hsl(0 0% 0% / 0.4), 0px 8px 10px -1px hsl(0 0% 0% / 0.4);
+  --shadow-2xl: 0px 2px 12px 0px hsl(0 0% 0% / 0.5);
+
+  /* VERITY logo tile (dark) */
+  --verity-logo-tile-bg: #171717;
+  --verity-logo-tile-border: rgba(255, 255, 255, 0.12);
+  --verity-logo-text: #F3F2ED;
+  --verity-accent: #FB923C;
 }
 
 @theme inline {

@@ -42,6 +42,7 @@ const FF_PLANNER: ITestDef = {
 };
 
 export const ALL_TESTS: ITestDef[] = [
+  FF_PLANNER,
   BIGFIVE_TEST,
   PF16_TEST,
   HEXACO_TEST,
@@ -67,7 +68,6 @@ export const ALL_TESTS: ITestDef[] = [
   PROCRAST_TEST,
   AQ_TEST,
   LOT_TEST,
-  FF_PLANNER,
 ];
 
 export function getTest(id: string): ITestDef | undefined {
